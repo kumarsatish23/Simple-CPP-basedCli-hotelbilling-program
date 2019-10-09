@@ -137,7 +137,7 @@ int main()
 				<< fbill
 				<< "==============================\n"
 				<< "            TOTAL          " << total << endl
-				<< "            GST            18%" << endl
+				<< "            GST            16%" << endl
 				<< "            Grand Total    "<<total+total*0.16<<endl
 				<< "==============================\n"
 				;
