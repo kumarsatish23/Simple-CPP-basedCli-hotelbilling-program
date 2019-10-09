@@ -1,6 +1,6 @@
 #include<iostream>
 #include <conio.h>
-#include <string.h>
+#include <string>
 using namespace std;
 
 int main()
@@ -22,9 +22,9 @@ int main()
 		while (pass == passw)
 		{
 			system("cls");
-			string name, address, email,fbill="";
-			double phone, total = 0;
-			int room, hall, menu;
+			string name, address, email,fbill="", phone;
+			
+			int room, hall, menu,total = 0;
 			bool x = true;
 			fbill = fbill + "sr.no Item                        price\n";
 			cout << msg + "Full Name Of client: ";
@@ -77,9 +77,11 @@ int main()
 				cout << "Error! option is not correct";
 				break;
 			}
-			fbill = fbill + "3\n";
+			int cnt = 3;
 			while (x == true)
 			{
+				std::string s = std::to_string(cnt);
+				fbill = fbill + s;
 				cout << "Restaurant:\n\n =============Menu=============" << endl
 					<< "1. Press '1' to Buy Pizza" << endl
 					<< "2. Press '2' to Buy Rice" << endl
@@ -92,28 +94,29 @@ int main()
 				{
 				case 1:
 					total = total + 100;
-					fbill = fbill + "      Pizza                         100\n";
+					fbill = fbill + "     Pizza                         100\n";
 					break;
 				case 2:
 					total = total + 60;
-					fbill = fbill + "      Rice                          60\n";
+					fbill = fbill + "     Rice                          60\n";
 					break;
 				case 3:
 					total = total + 80;
-					fbill = fbill + "      Spaghetti                     80\n";
+					fbill = fbill + "     Spaghetti                     80\n";
 					break;
 				case 4:
 					total = total + 25;
-					fbill = fbill + "      Tea                           25\n";
+					fbill = fbill + "     Tea                           25\n";
 					break;
 				case 5:
 					total = total + 70;
-					fbill = fbill + "      Garlic bread                  70\n";
+					fbill = fbill + "     Garlic bread                  70\n";
 					break;
 				default:
 					cout << "Error! operator is not correct";
 					break;
 				}
+				cnt++;
 				string end;
 				cout << "Do you want to continue (y/n): ";
 				cin >> end;
@@ -133,7 +136,11 @@ int main()
 				<< "==============================\n\n"
 				<< fbill
 				<< "==============================\n"
-				<< "      GRAND TOTAL          " << total << endl;
+				<< "            TOTAL          " << total << endl
+				<< "            GST            18%" << endl
+				<< "            Grand Total    "<<total+total*0.16<<endl
+				<< "==============================\n"
+				;
 
 			system("\n pause");
 		}
