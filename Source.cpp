@@ -20,7 +20,7 @@ void read()
 }
 void checkinn()
 {
-	cout << "select Type Of room:\n\n 1-suit \n 2-non-A.C\n 3-A.C\n 4-Mainmenu\n";
+	cout << "select Type Of room:\n\n 1-suit 10 available\n 2-non-A.C 3 available\n 3-A.C 6 available\n 4-Mainmenu\n";
 	cin >> room;
 	switch (room)
 	{
