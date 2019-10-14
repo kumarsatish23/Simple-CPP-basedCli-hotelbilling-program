@@ -177,7 +177,7 @@ int main()
 					string end;
 					cout << "Do you want to continue (y/n): ";
 					cin >> end;
-					if (end == "y")
+					if (end == "n")
 					{
 						y = false;
 					}
