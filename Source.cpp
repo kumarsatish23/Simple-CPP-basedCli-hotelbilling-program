@@ -177,7 +177,7 @@ int main()
 					string end;
 					cout << "Do you want to continue (y/n): ";
 					cin >> end;
-					if (end == "n")
+					if (end == "y")
 					{
 						y = false;
 					}
@@ -211,6 +211,7 @@ int main()
 					;
 				fs.close();
 				fbill = "";
+				total = 0;
 				system("\n pause");
 			}
 		}
