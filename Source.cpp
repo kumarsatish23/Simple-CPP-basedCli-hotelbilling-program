@@ -139,8 +139,7 @@ int main()
 	fstream f;
 	f.open("avail.txt", ios::out | ios::in | ios::binary);
 	a.suit = 10; a.NAC = 10; a.AC = 10; f.write((char*)&a, sizeof(a)); f.close();
-	while (1)
-	{
+
 		system("cls");
 		cout << msg + "Enter password$: "; int i = 0; char z;
 
@@ -161,6 +160,8 @@ int main()
 		}
 		while (pass == passw)
 		{
+				while (1)
+	{
 			system("cls");
 			int big;
 			cout << msg + "1.NEWCLIENT" << endl
