@@ -4,8 +4,8 @@
 #include <fstream>
 #include<stdlib.h>
 using namespace std;
-string name, address, email, fbill = "", passw = "password@123", msg = "HOTEL MANAGEMENT SYSTEM \n\n\n ", pass;
-int room, hall, menu, total = 0, mainmenu, adr1, adr2; string phone;
+string name, address, email, fbill = "", passw = "password@123", msg = "HOTEL MANAGEMENT SYSTEM \n\n\n ", pass, paymentmethod;
+int room, hall, pay, menu, total = 0, mainmenu, adr1, adr2; string phone;
 bool x = true;
 class avail
 {
@@ -134,6 +134,29 @@ void resturent()
 
 	}
 }
+void payment()
+{
+	cout << msg + "select Type Of Payment Method:\n\n 1-Paytm \n 2-Card Payment\n 3-UPI\n 4-CASH payment\n";
+	cin >> pay;
+	switch (pay)
+	{
+	case 1:
+		paymentmethod = "PAID USING PAYTM!!\n"; cout << "PAID USING PAYTM!!\n";
+		break;
+	case 2:
+		paymentmethod = "PAID USING CARD!!\n"; cout << "PAID USING CARD!!\n";
+		break;
+	case 3:
+		paymentmethod = "PAID USING UPI!!\n"; cout << "PAID USING UPI!!\n";
+		break;
+	case 4:
+		paymentmethod = "PAID USING CASH!!\n"; cout << "PAID USING CASH!!\n";
+		break;
+	default:
+		cout << "Error! option is not correct";
+		getche(); payment();
+	}
+}
 int main()
 {
 	fstream f;
@@ -233,6 +256,9 @@ int main()
 
 					}
 					system("cls");
+					payment();
+					system("pause");
+					system("cls");
 					cout << msg + "==========final bill==========\n\n"
 						<< "=========Client Detail========\n\n"
 						<< "Name of Client           :" << name << endl
@@ -245,7 +271,7 @@ int main()
 						<< "            TOTAL          " << total << endl
 						<< "            GST            16%" << endl
 						<< "            Grand Total    " << total + total * 0.16 << endl
-						<< "==============================\n"
+						<< "==============================\n" + paymentmethod
 						;
 					fstream fs;
 					fs.open("record.txt", std::fstream::in | std::fstream::out | std::fstream::app);
