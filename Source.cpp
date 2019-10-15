@@ -4,7 +4,7 @@
 #include <fstream>
 #include<stdlib.h>
 using namespace std;
-string name, address, email, fbill = "", passw = "password@123", msg = "HOTEL MANAGEMENT SYSTEM \n\n\n", pass;
+string name, address, email, fbill = "", passw = "password@123", msg = "HOTEL MANAGEMENT SYSTEM \n\n\n ", pass;
 int room, hall, menu, total = 0, mainmenu, adr1, adr2; string phone;
 bool x = true;
 class avail
@@ -144,9 +144,10 @@ int main()
 		system("cls");
 		cout << msg + "Enter password$: "; int i = 0; char z;
 
-		char ch;
+		char ch ;
 		ch = _getch();
 		while (ch != 13) {
+		
 			pass.push_back(ch);
 			cout << '*';
 			ch = _getch();
@@ -155,6 +156,7 @@ int main()
 			system("cls");
 
 			cout << msg + "!!!You Have Enter Wrong Password$\n\n";
+			pass="";
 			system("pause");
 		}
 		while (pass == passw)
