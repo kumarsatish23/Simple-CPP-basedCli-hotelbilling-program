@@ -34,7 +34,7 @@ void checkinn()
 	{
 	case 1:if (a.suit < 1)
 	{
-		cout << "Sorry room not available"; getche(); checkinn();
+		cout << "Sorry room not available"; _getch(); checkinn();
 	}
 		  total = total + 100;
 		  fbill = fbill + "     suit                          100\n";
@@ -47,7 +47,7 @@ void checkinn()
 	case 2:
 		if (a.NAC < 1)
 		{
-			cout << "Sorry room not available"; getche(); checkinn();
+			cout << "Sorry room not available"; _getch(); checkinn();
 		}
 		total = total + 200;
 		fbill = fbill + "     non-A.C                       200\n";
@@ -60,7 +60,7 @@ void checkinn()
 	case 3:
 		if (a.AC < 1)
 		{
-			cout << "Sorry room not available"; getche(); checkinn();
+			cout << "Sorry room not available"; _getch(); checkinn();
 		}
 		total = total + 300;
 		fbill = fbill + "     A.C                           300\n";
@@ -72,7 +72,7 @@ void checkinn()
 		break;
 	default:
 		cout << "Error! operator is not correct";
-		getche(); checkinn();
+		_getch(); checkinn();
 	}
 	f.close();
 }
@@ -92,7 +92,7 @@ void functionhall()
 		break;
 	default:
 		cout << "Error! option is not correct";
-		getche(); functionhall();
+		_getch(); functionhall();
 	}
 }
 void resturent()
@@ -154,7 +154,7 @@ void payment()
 		break;
 	default:
 		cout << "Error! option is not correct";
-		getche(); payment();
+		_getch(); payment();
 	}
 }
 int main()
@@ -292,7 +292,7 @@ int main()
 				}
 				else
 				{
-					cout << "Invalid"; getch(); main();
+					cout << "Invalid"; _getch(); main();
 				}
 			}
 		}
