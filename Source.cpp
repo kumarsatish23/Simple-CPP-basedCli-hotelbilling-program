@@ -144,10 +144,10 @@ int main()
 		system("cls");
 		cout << msg + "Enter password$: "; int i = 0; char z;
 
-		char ch ;
+		char ch;
 		ch = _getch();
 		while (ch != 13) {
-		
+
 			pass.push_back(ch);
 			cout << '*';
 			ch = _getch();
@@ -156,119 +156,119 @@ int main()
 			system("cls");
 
 			cout << msg + "!!!You Have Enter Wrong Password$\n\n";
-			pass="";
+			pass = "";
 			system("pause");
 		}
 		while (pass == passw)
 		{
-			while(1)
+			while (1)
 			{
-			
-			system("cls");
-			int big;
-			cout << msg + "1.NEWCLIENT" << endl
-				<< "2.CHECK RECORD" << endl
 
-				<< "ENTER OPTION : ";
-			cin >> big;
-			if (big == 2)
-			{
-				read();
-			}
-			else if (big == 1)
-			{
 				system("cls");
+				int big;
+				cout << msg + "1.NEWCLIENT" << endl
+					<< "2.CHECK RECORD" << endl
 
-				fbill = fbill + "sr.no Item                        price\n";
-				cout << msg + "Full Name Of client: ";
-				cin >> name;
-				cout << "Phone Number of Client: ";
-				cin >> phone;
-				cout << "Email address Of Client: ";
-				cin >> email;
-				cout << "Address Of Client: ";
-				cin >> address;
-				system("cls");
-				bool y = true;
-				while (y == true)
+					<< "ENTER OPTION : ";
+				cin >> big;
+				if (big == 2)
 				{
-					cout << msg + "1.CHECKINN" << endl
-						<< "2.FUNCTION HALL" << endl
-						<< "3.RESTURENT" << endl
-						<< "ENTER OPTION : ";
-					cin >> mainmenu;
-					switch (mainmenu)
-					{
-					case 1:
-
-						checkinn();
-						break;
-					case 2:
-
-						functionhall();
-						break;
-					case 3:
-
-						resturent();
-						break;
-					default:
-						cout << "Error! operator is not correct";
-						break;
-					}
-					string end;
-					cout << "Do you want to book anything else (y/n)?: ";
-					cin >> end;
-					if (end == "y")
-					{
-						y = true;
-					}
-					else if (end == "n")
-					{
-						y = false;
-					}
-					else
-					{
-						cout << "Invalid"; exit(0);
-					}
-
+					read();
 				}
-				system("cls");
-				cout << msg + "==========final bill==========\n\n"
-					<< "=========Client Detail========\n\n"
-					<< "Name of Client           :" << name << endl
-					<< "Phone number of client   :" << phone << endl
-					<< "Email address of client  :" << email << endl
-					<< "Address of client        :" << address << endl
-					<< "==============================\n\n"
-					<< fbill
-					<< "==============================\n"
-					<< "            TOTAL          " << total << endl
-					<< "            GST            16%" << endl
-					<< "            Grand Total    " << total + total * 0.16 << endl
-					<< "==============================\n"
-					;
-				fstream fs;
-				fs.open("record.txt", std::fstream::in | std::fstream::out | std::fstream::app);
-				fs
-					<< "Name of Client           :" << name << endl
-					<< "Phone number of client   :" << phone << endl
-					<< "Email address of client  :" << email << endl
-					<< "Address of client        :" << address << endl
-					<< fbill
-					<< " TOTAL  " << total << endl
-					<< "Grand Total including gst  " << total + total * 0.16 << endl
-					<< "==============================\n"
-					;
-				fs.close();
-				fbill = "";
-				total = 0;
-				system("\n pause");
-			}
-			else
-			{
-				cout << "Invalid"; getch(); main();
+				else if (big == 1)
+				{
+					system("cls");
+
+					fbill = fbill + "sr.no Item                        price\n";
+					cout << msg + "Full Name Of client: ";
+					cin >> name;
+					cout << "Phone Number of Client: ";
+					cin >> phone;
+					cout << "Email address Of Client: ";
+					cin >> email;
+					cout << "Address Of Client: ";
+					cin >> address;
+					system("cls");
+					bool y = true;
+					while (y == true)
+					{
+						cout << msg + "1.CHECKINN" << endl
+							<< "2.FUNCTION HALL" << endl
+							<< "3.RESTURENT" << endl
+							<< "ENTER OPTION : ";
+						cin >> mainmenu;
+						switch (mainmenu)
+						{
+						case 1:
+
+							checkinn();
+							break;
+						case 2:
+
+							functionhall();
+							break;
+						case 3:
+
+							resturent();
+							break;
+						default:
+							cout << "Error! operator is not correct";
+							break;
+						}
+						string end;
+						cout << "Do you want to book anything else (y/n)?: ";
+						cin >> end;
+						if (end == "y")
+						{
+							y = true;
+						}
+						else if (end == "n")
+						{
+							y = false;
+						}
+						else
+						{
+							cout << "Invalid"; exit(0);
+						}
+
+					}
+					system("cls");
+					cout << msg + "==========final bill==========\n\n"
+						<< "=========Client Detail========\n\n"
+						<< "Name of Client           :" << name << endl
+						<< "Phone number of client   :" << phone << endl
+						<< "Email address of client  :" << email << endl
+						<< "Address of client        :" << address << endl
+						<< "==============================\n\n"
+						<< fbill
+						<< "==============================\n"
+						<< "            TOTAL          " << total << endl
+						<< "            GST            16%" << endl
+						<< "            Grand Total    " << total + total * 0.16 << endl
+						<< "==============================\n"
+						;
+					fstream fs;
+					fs.open("record.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+					fs
+						<< "Name of Client           :" << name << endl
+						<< "Phone number of client   :" << phone << endl
+						<< "Email address of client  :" << email << endl
+						<< "Address of client        :" << address << endl
+						<< fbill
+						<< " TOTAL  " << total << endl
+						<< "Grand Total including gst  " << total + total * 0.16 << endl
+						<< "==============================\n"
+						;
+					fs.close();
+					fbill = "";
+					total = 0;
+					system("\n pause");
+				}
+				else
+				{
+					cout << "Invalid"; getch(); main();
+				}
 			}
 		}
 	}
-}
 }
