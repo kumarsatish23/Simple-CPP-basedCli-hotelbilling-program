@@ -4,8 +4,8 @@
 #include <fstream>
 #include<stdlib.h>
 using namespace std;
-string name, address, email, fbill = "", passw = "password@123", msg = "HOTEL MANAGEMENT SYSTEM \n\n\n ", pass,paymentmethod;
-int room, hall,pay, menu, total = 0, mainmenu, adr1, adr2; string phone;
+string name, address, email, fbill = "", passw = "password@123", msg = "HOTEL MANAGEMENT SYSTEM \n\n\n ", pass, paymentmethod;
+int room, hall, pay, menu, total = 0, mainmenu, adr1, adr2; string phone;
 bool x = true;
 class avail
 {
@@ -141,16 +141,16 @@ void payment()
 	switch (pay)
 	{
 	case 1:
-		paymentmethod ="PAID USING PAYTM!!\n"; cout <<"PAID USING PAYTM!!\n";
+		paymentmethod = "PAID USING PAYTM!!\n"; cout << "PAID USING PAYTM!!\n";
 		break;
 	case 2:
-		paymentmethod ="PAID USING CARD!!\n"; cout << "PAID USING CARD!!\n";
+		paymentmethod = "PAID USING CARD!!\n"; cout << "PAID USING CARD!!\n";
 		break;
 	case 3:
-		paymentmethod ="PAID USING UPI!!\n"; cout << "PAID USING UPI!!\n";
+		paymentmethod = "PAID USING UPI!!\n"; cout << "PAID USING UPI!!\n";
 		break;
 	case 4:
-		paymentmethod ="PAID USING CASH!!\n"; cout << "PAID USING CASH!!\n";
+		paymentmethod = "PAID USING CASH!!\n"; cout << "PAID USING CASH!!\n";
 		break;
 	default:
 		cout << "Error! option is not correct";
@@ -283,7 +283,7 @@ int main()
 						<< fbill
 						<< " TOTAL  " << total << endl
 						<< "Grand Total including gst  " << total + total * 0.16 << endl
-						<< "==============================\n"  + paymentmethod
+						<< "==============================\n" + paymentmethod
 						;
 					fs.close();
 					fbill = "";
@@ -292,7 +292,7 @@ int main()
 				}
 				else
 				{
-					cout << "Invalid"; _getch(); main();
+					cout << "Invalid"; _getch();
 				}
 			}
 		}
